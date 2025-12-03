@@ -1,0 +1,41 @@
+{
+    "name": "ai-chef",
+    "version": "1.0.0",
+    "description": "AI-powered cooking suggestion app",
+    "author": "User",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "build": "electron-builder build --win portable"
+    },
+    "devDependencies": {
+        "electron": "^28.2.3",
+        "electron-builder": "^24.13.3"
+    },
+    "build": {
+        "appId": "com.aichef.app",
+        "productName": "AI-Chef",
+        "files": [
+            "package.json",
+            "main.js",
+            "app.js",
+            "index.html",
+            "style.css",
+            "preload.js",
+            "data/**/*",
+            "scripts/**/*"
+        ],
+        "asar": true,
+    "compression": "maximum",
+        "afterPack": "scripts/remove-locales.js",
+        "directories": {
+            "output": "release"
+        },
+        "win": {
+            "target": "portable"
+        },
+        "portable": {
+            "artifactName": "${productName}Portable.exe"
+        }
+    }
+}

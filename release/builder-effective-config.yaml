@@ -1,0 +1,23 @@
+directories:
+  output: release
+  buildResources: build
+appId: com.aichef.app
+productName: AI-Chef
+files:
+  - filter:
+      - package.json
+      - main.js
+      - app.js
+      - index.html
+      - style.css
+      - preload.js
+      - data/**/*
+      - scripts/**/*
+asar: true
+compression: maximum
+afterPack: scripts/remove-locales.js
+win:
+  target: portable
+portable:
+  artifactName: ${productName}Portable.exe
+electronVersion: 28.3.3

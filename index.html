@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="AI-powered desktop app that suggests recipes based on ingredients you have in your fridge">
+    <title>AI Chef - Smart Recipe Suggestions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🍳 AI Chef</h1>
+            <p class="subtitle">Get creative recipe ideas based on what's in your fridge</p>
+        </header>
+
+        <!-- Main App -->
+        <div id="mainApp">
+            <!-- Ingredients Input -->
+            <div class="card">
+                <h2 class="card-title">🥗 What's in your fridge?</h2>
+                <div class="ingredients-input">
+                    <input type="text" id="ingredientInput" placeholder="Enter an ingredient (e.g., chicken, tomatoes)">
+                    <button id="addIngredientBtn" class="btn btn-primary">
+                        <span>+ Add</span>
+                    </button>
+                </div>
+
+                <div id="ingredientsTags" class="ingredients-tags"></div>
+
+                <button class="btn btn-primary" id="getRecipesBtn" style="width: 100%;">
+                    <span>✨ Get Recipe Suggestions</span>
+                </button>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="card hidden">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <div class="loading-text">AI Chef is cooking up some ideas...</div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div id="resultsContainer" class="card hidden">
+                <h2 class="card-title">🎉 Recipe Suggestions</h2>
+                <div id="recipeContent" class="recipe-content"></div>
+            </div>
+
+            <!-- Error State -->
+            <div id="errorContainer"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
